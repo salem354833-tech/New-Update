@@ -99,6 +99,18 @@ async function main(): Promise<void> {
     }
   });
 
+  // Create a minimal HTTP server so platforms like Render (Web Services) can detect an open port
+  import('node:http').then(({ createServer }) => {
+    const server = createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/plain' });
+      res.end('Bot is running\\n');
+    });
+    const port = process.env.PORT || 3000;
+    server.listen(port, () => {
+      logger.info(`Dummy HTTP server listening on port ${port} for health checks`);
+    });
+  });
+
   await client.login(process.env.DISCORD_TOKEN);
 }
 
