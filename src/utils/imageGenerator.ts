@@ -12,7 +12,8 @@ const CARD_HEIGHT = 544;
 
 // Avatar circle — pixel-accurate values derived by scanning transparent pixels in
 // assets/template.png (native 617×305) and scaling by 1100/617 = 1.783.
-// Native centroid: (478, 152), avgR: 136 → scaled below.
+// Native centroid: (478, 
+// 152), avgR: 136 → scaled below.
 const CIRCLE_CENTER_X = 851;
 const CIRCLE_CENTER_Y = 271;
 const CIRCLE_INNER_RADIUS = 243;
